@@ -44,8 +44,12 @@ contract AccountFactory is Ownable {
             )
         );
 
-         // Only register if called through SenderCreator (during actual execution)
-        if (msg.sender == address(senderCreator) || msg.sender == owner()) {
+         // Only register if the creation is requested from the owner
+         // This is a temp solution until we dont figure out a proper way to
+         // protect the paymaster (without the signature) to not be used by an
+         // arbitrary accounts, as opening up the `AccountFactory` would enable anyone to
+         // register account if called via `EntryPoint` contract
+        if (msg.sender == owner()) {
             _registeredAccounts[addr] = true;
             emit AccountRegistered(addr);
         }
