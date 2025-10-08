@@ -1,0 +1,20 @@
+{
+  "name": "particle-taiko-aa",
+  "version": "1.0.0",
+  "description": "Particle Network Account Abstraction demo on Taiko",
+  "type": "module",
+  "scripts": {
+    "start": "tsx taiko-aa.ts",
+    "dev": "tsx watch taiko-aa.ts"
+  },
+  "dependencies": {
+    "@particle-network/aa": "^2.0.2",
+    "ethers": "^6.13.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.9.0",
+    "@types/node": "^22.0.0"
+  }
+}
